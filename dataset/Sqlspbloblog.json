@@ -1,0 +1,17 @@
+{
+	"name": "Sqlspbloblog",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsblobsp1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "audit",
+			"table": "copylog"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

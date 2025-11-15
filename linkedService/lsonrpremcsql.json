@@ -1,0 +1,22 @@
+{
+	"name": "lsonrpremcsql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "ls on rpem to cloud",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DELL\\SQLEXPRESS",
+			"database": "SAMPLEDB1",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "Visionboard",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlYzg4NDkxZS1lNTIwLTQ5MTgtOTdiZC0zNzZmYWQ5MWYyYjMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "self-hosted-integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

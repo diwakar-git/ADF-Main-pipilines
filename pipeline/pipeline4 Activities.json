@@ -1,0 +1,66 @@
+{
+	"name": "pipeline4 Activities",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup1 for csv",
+				"description": "lookup for csv data",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "onprem1csv1",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "Filter1",
+				"description": "filter2",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "Lookup1 for csv",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup1 for csv').output.valueactivity('Lookup1 for csv').output.value",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@activity('Lookup1 for csv').outputactivity('Lookup1 for csv').output.count",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-11-07T00:04:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "MS-SQL1",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4c9b5e99-a978-4a88-abc1-7b7e606aed1d",
+		"tenantId": "a58a1f00-ad24-4fac-a95e-43c177169dc2"
+	}
+}

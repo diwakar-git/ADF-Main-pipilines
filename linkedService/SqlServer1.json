@@ -1,0 +1,21 @@
+{
+	"name": "SqlServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DELL\\SQLEXPRESS",
+			"database": "SAMPLEDB1",
+			"encrypt": "optional",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "Visionboard",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkMjI5OWIyMS1iYzQxLTRmZGEtYjgyMS0xNzFlMGQ3Y2NkNmIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "self-hosted-integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

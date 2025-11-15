@@ -1,0 +1,18 @@
+{
+	"name": "deletedfiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsdelete2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "deletefiles2"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

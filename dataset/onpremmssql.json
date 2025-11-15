@@ -1,0 +1,28 @@
+{
+	"name": "onpremmssql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsonrpremcsql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "EmployeeID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DeptID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "EmployeeDepartments"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

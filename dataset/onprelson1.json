@@ -1,0 +1,19 @@
+{
+	"name": "onprelson1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsonprem2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "newstore2"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
