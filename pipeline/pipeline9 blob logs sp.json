@@ -105,7 +105,10 @@
 							"type": "String"
 						},
 						"TableName": {
-							"value": "audit.copylog",
+							"value": {
+								"value": "@activity('plsql to blob').output",
+								"type": "Expression"
+							},
 							"type": "String"
 						}
 					}
