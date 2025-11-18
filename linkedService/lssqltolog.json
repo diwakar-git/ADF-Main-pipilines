@@ -1,0 +1,21 @@
+{
+	"name": "lssqltolog",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DELL\\SQLEXPRESS",
+			"database": "SAMPLEDB1",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "Visionboard",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4MjZiZDBhZS04NGY4LTQ5OWItOTgzZC02MWM5OTA5ZGE0YjciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "self-hosted-integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
