@@ -1,6 +1,7 @@
 {
-	"name": "plcsv2par",
+	"name": "plcsv2par_E2EProject1",
 	"properties": {
+		"description": "Banking project ingest data of user data",
 		"activities": [
 			{
 				"name": "cpy_csv2par",
