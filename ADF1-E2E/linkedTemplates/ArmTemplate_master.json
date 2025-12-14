@@ -1,0 +1,515 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF1-E2E"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"delete2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'delete2'"
+		},
+		"lametafrm for each_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lametafrm for each'"
+		},
+		"ls_ds_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_ds_csv'"
+		},
+		"ls_tr1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_tr1'"
+		},
+		"ls_tr2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_tr2'"
+		},
+		"ls_tr_file_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_tr_file'"
+		},
+		"lsblobsp1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lsblobsp1'"
+		},
+		"lscsvdelete_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lscsvdelete'"
+		},
+		"lscsvemployee_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lscsvemployee'"
+		},
+		"lsdelete2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lsdelete2'"
+		},
+		"lsfromonprem2sql_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lsfromonprem2sql'"
+		},
+		"lsinputtrigger_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lsinputtrigger'"
+		},
+		"lsmeta_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lsmeta'"
+		},
+		"lsonprem2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lsonprem2'"
+		},
+		"lsonrpremcsql_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lsonrpremcsql'"
+		},
+		"lssql_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lssql'"
+		},
+		"lssql2csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lssql2csv'"
+		},
+		"lssqltolog_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lssqltolog'"
+		},
+		"lssqql2par_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lssqql2par'"
+		},
+		"ls_DS_CSV_Par_src_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_DS_CSV_Par_src'"
+		},
+		"Ls_DS_Par_des_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Ls_DS_Par_des'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storeonpremisedata1.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://triggeroutput1.dfs.core.windows.net/"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DELL\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SAMPLEDB1"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Visionboard"
+		},
+		"delete2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://30daysdelete.dfs.core.windows.net/"
+		},
+		"lametafrm for each_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"ls_ds_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ifactivity.dfs.core.windows.net/"
+		},
+		"ls_tr1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://triggerinput1.dfs.core.windows.net/"
+		},
+		"ls_tr2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://triggeroutput1.dfs.core.windows.net/"
+		},
+		"ls_tr_file_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"lsblobsp1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DELL\\SQLEXPRESS"
+		},
+		"lsblobsp1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SAMPLEDB1"
+		},
+		"lsblobsp1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Visionboard"
+		},
+		"lscsvdelete_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://30daysdelete.dfs.core.windows.net/"
+		},
+		"lscsvemployee_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storeonpremisedata1.dfs.core.windows.net/"
+		},
+		"lsdelete2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://30daysdelete.dfs.core.windows.net/"
+		},
+		"lsfromonprem2sql_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storeonpremisedata1.dfs.core.windows.net/"
+		},
+		"lsinputtrigger_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://triggerinput1.dfs.core.windows.net/"
+		},
+		"lsmeta_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"lsonprem2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"lsonrpremcsql_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DELL\\SQLEXPRESS"
+		},
+		"lsonrpremcsql_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SAMPLEDB1"
+		},
+		"lsonrpremcsql_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Visionboard"
+		},
+		"lssql_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DELL\\SQLEXPRESS"
+		},
+		"lssql_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SAMPLEDB1"
+		},
+		"lssql_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "DELL\\intel"
+		},
+		"lssql2csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"lssqltolog_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DELL\\SQLEXPRESS"
+		},
+		"lssqltolog_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SAMPLEDB1"
+		},
+		"lssqltolog_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Visionboard"
+		},
+		"lssqql2par_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storeonpremisedata1.dfs.core.windows.net/"
+		},
+		"triggernew_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/151df721-7d35-4071-b059-52a68245c883/resourceGroups/rg_onpremise/providers/Microsoft.Storage/storageAccounts/triggerinput1"
+		},
+		"ls_DS_CSV_Par_src_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsbulkupload3.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADF1-E2E_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"delete2_accountKey": {
+						"value": "[parameters('delete2_accountKey')]"
+					},
+					"lametafrm for each_accountKey": {
+						"value": "[parameters('lametafrm for each_accountKey')]"
+					},
+					"ls_ds_csv_accountKey": {
+						"value": "[parameters('ls_ds_csv_accountKey')]"
+					},
+					"ls_tr1_accountKey": {
+						"value": "[parameters('ls_tr1_accountKey')]"
+					},
+					"ls_tr2_accountKey": {
+						"value": "[parameters('ls_tr2_accountKey')]"
+					},
+					"ls_tr_file_accountKey": {
+						"value": "[parameters('ls_tr_file_accountKey')]"
+					},
+					"lscsvdelete_accountKey": {
+						"value": "[parameters('lscsvdelete_accountKey')]"
+					},
+					"lscsvemployee_accountKey": {
+						"value": "[parameters('lscsvemployee_accountKey')]"
+					},
+					"lsdelete2_accountKey": {
+						"value": "[parameters('lsdelete2_accountKey')]"
+					},
+					"lsfromonprem2sql_accountKey": {
+						"value": "[parameters('lsfromonprem2sql_accountKey')]"
+					},
+					"lsinputtrigger_accountKey": {
+						"value": "[parameters('lsinputtrigger_accountKey')]"
+					},
+					"lsmeta_accountKey": {
+						"value": "[parameters('lsmeta_accountKey')]"
+					},
+					"lsonprem2_accountKey": {
+						"value": "[parameters('lsonprem2_accountKey')]"
+					},
+					"lssql2csv_accountKey": {
+						"value": "[parameters('lssql2csv_accountKey')]"
+					},
+					"ls_DS_CSV_Par_src_accountKey": {
+						"value": "[parameters('ls_DS_CSV_Par_src_accountKey')]"
+					},
+					"Ls_DS_Par_des_connectionString": {
+						"value": "[parameters('Ls_DS_Par_des_connectionString')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"delete2_properties_typeProperties_url": {
+						"value": "[parameters('delete2_properties_typeProperties_url')]"
+					},
+					"lametafrm for each_properties_typeProperties_url": {
+						"value": "[parameters('lametafrm for each_properties_typeProperties_url')]"
+					},
+					"ls_ds_csv_properties_typeProperties_url": {
+						"value": "[parameters('ls_ds_csv_properties_typeProperties_url')]"
+					},
+					"ls_tr1_properties_typeProperties_url": {
+						"value": "[parameters('ls_tr1_properties_typeProperties_url')]"
+					},
+					"ls_tr2_properties_typeProperties_url": {
+						"value": "[parameters('ls_tr2_properties_typeProperties_url')]"
+					},
+					"ls_tr_file_properties_typeProperties_url": {
+						"value": "[parameters('ls_tr_file_properties_typeProperties_url')]"
+					},
+					"lscsvdelete_properties_typeProperties_url": {
+						"value": "[parameters('lscsvdelete_properties_typeProperties_url')]"
+					},
+					"lscsvemployee_properties_typeProperties_url": {
+						"value": "[parameters('lscsvemployee_properties_typeProperties_url')]"
+					},
+					"lsdelete2_properties_typeProperties_url": {
+						"value": "[parameters('lsdelete2_properties_typeProperties_url')]"
+					},
+					"lsfromonprem2sql_properties_typeProperties_url": {
+						"value": "[parameters('lsfromonprem2sql_properties_typeProperties_url')]"
+					},
+					"lsinputtrigger_properties_typeProperties_url": {
+						"value": "[parameters('lsinputtrigger_properties_typeProperties_url')]"
+					},
+					"lsmeta_properties_typeProperties_url": {
+						"value": "[parameters('lsmeta_properties_typeProperties_url')]"
+					},
+					"lsonprem2_properties_typeProperties_url": {
+						"value": "[parameters('lsonprem2_properties_typeProperties_url')]"
+					},
+					"lssql2csv_properties_typeProperties_url": {
+						"value": "[parameters('lssql2csv_properties_typeProperties_url')]"
+					},
+					"ls_DS_CSV_Par_src_properties_typeProperties_url": {
+						"value": "[parameters('ls_DS_CSV_Par_src_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADF1-E2E_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"lsblobsp1_password": {
+						"value": "[parameters('lsblobsp1_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					},
+					"lsblobsp1_properties_typeProperties_server": {
+						"value": "[parameters('lsblobsp1_properties_typeProperties_server')]"
+					},
+					"lsblobsp1_properties_typeProperties_database": {
+						"value": "[parameters('lsblobsp1_properties_typeProperties_database')]"
+					},
+					"lsblobsp1_properties_typeProperties_userName": {
+						"value": "[parameters('lsblobsp1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF1-E2E_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADF1-E2E_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"lsonrpremcsql_password": {
+						"value": "[parameters('lsonrpremcsql_password')]"
+					},
+					"lssql_password": {
+						"value": "[parameters('lssql_password')]"
+					},
+					"lssqltolog_password": {
+						"value": "[parameters('lssqltolog_password')]"
+					},
+					"lssqql2par_accountKey": {
+						"value": "[parameters('lssqql2par_accountKey')]"
+					},
+					"lsonrpremcsql_properties_typeProperties_server": {
+						"value": "[parameters('lsonrpremcsql_properties_typeProperties_server')]"
+					},
+					"lsonrpremcsql_properties_typeProperties_database": {
+						"value": "[parameters('lsonrpremcsql_properties_typeProperties_database')]"
+					},
+					"lsonrpremcsql_properties_typeProperties_userName": {
+						"value": "[parameters('lsonrpremcsql_properties_typeProperties_userName')]"
+					},
+					"lssql_properties_typeProperties_server": {
+						"value": "[parameters('lssql_properties_typeProperties_server')]"
+					},
+					"lssql_properties_typeProperties_database": {
+						"value": "[parameters('lssql_properties_typeProperties_database')]"
+					},
+					"lssql_properties_typeProperties_userName": {
+						"value": "[parameters('lssql_properties_typeProperties_userName')]"
+					},
+					"lssqltolog_properties_typeProperties_server": {
+						"value": "[parameters('lssqltolog_properties_typeProperties_server')]"
+					},
+					"lssqltolog_properties_typeProperties_database": {
+						"value": "[parameters('lssqltolog_properties_typeProperties_database')]"
+					},
+					"lssqltolog_properties_typeProperties_userName": {
+						"value": "[parameters('lssqltolog_properties_typeProperties_userName')]"
+					},
+					"lssqql2par_properties_typeProperties_url": {
+						"value": "[parameters('lssqql2par_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF1-E2E_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "ADF1-E2E_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"triggernew_properties_typeProperties_scope": {
+						"value": "[parameters('triggernew_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF1-E2E_ArmTemplate_2')]"
+			]
+		}
+	]
+}

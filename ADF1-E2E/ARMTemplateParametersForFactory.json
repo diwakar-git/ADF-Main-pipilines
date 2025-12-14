@@ -1,0 +1,186 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF1-E2E"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"delete2_accountKey": {
+			"value": ""
+		},
+		"lametafrm for each_accountKey": {
+			"value": ""
+		},
+		"ls_ds_csv_accountKey": {
+			"value": ""
+		},
+		"ls_tr1_accountKey": {
+			"value": ""
+		},
+		"ls_tr2_accountKey": {
+			"value": ""
+		},
+		"ls_tr_file_accountKey": {
+			"value": ""
+		},
+		"lsblobsp1_password": {
+			"value": ""
+		},
+		"lscsvdelete_accountKey": {
+			"value": ""
+		},
+		"lscsvemployee_accountKey": {
+			"value": ""
+		},
+		"lsdelete2_accountKey": {
+			"value": ""
+		},
+		"lsfromonprem2sql_accountKey": {
+			"value": ""
+		},
+		"lsinputtrigger_accountKey": {
+			"value": ""
+		},
+		"lsmeta_accountKey": {
+			"value": ""
+		},
+		"lsonprem2_accountKey": {
+			"value": ""
+		},
+		"lsonrpremcsql_password": {
+			"value": ""
+		},
+		"lssql_password": {
+			"value": ""
+		},
+		"lssql2csv_accountKey": {
+			"value": ""
+		},
+		"lssqltolog_password": {
+			"value": ""
+		},
+		"lssqql2par_accountKey": {
+			"value": ""
+		},
+		"ls_DS_CSV_Par_src_accountKey": {
+			"value": ""
+		},
+		"Ls_DS_Par_des_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://storeonpremisedata1.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://triggeroutput1.dfs.core.windows.net/"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "DELL\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "SAMPLEDB1"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "Visionboard"
+		},
+		"delete2_properties_typeProperties_url": {
+			"value": "https://30daysdelete.dfs.core.windows.net/"
+		},
+		"lametafrm for each_properties_typeProperties_url": {
+			"value": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"ls_ds_csv_properties_typeProperties_url": {
+			"value": "https://ifactivity.dfs.core.windows.net/"
+		},
+		"ls_tr1_properties_typeProperties_url": {
+			"value": "https://triggerinput1.dfs.core.windows.net/"
+		},
+		"ls_tr2_properties_typeProperties_url": {
+			"value": "https://triggeroutput1.dfs.core.windows.net/"
+		},
+		"ls_tr_file_properties_typeProperties_url": {
+			"value": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"lsblobsp1_properties_typeProperties_server": {
+			"value": "DELL\\SQLEXPRESS"
+		},
+		"lsblobsp1_properties_typeProperties_database": {
+			"value": "SAMPLEDB1"
+		},
+		"lsblobsp1_properties_typeProperties_userName": {
+			"value": "Visionboard"
+		},
+		"lscsvdelete_properties_typeProperties_url": {
+			"value": "https://30daysdelete.dfs.core.windows.net/"
+		},
+		"lscsvemployee_properties_typeProperties_url": {
+			"value": "https://storeonpremisedata1.dfs.core.windows.net/"
+		},
+		"lsdelete2_properties_typeProperties_url": {
+			"value": "https://30daysdelete.dfs.core.windows.net/"
+		},
+		"lsfromonprem2sql_properties_typeProperties_url": {
+			"value": "https://storeonpremisedata1.dfs.core.windows.net/"
+		},
+		"lsinputtrigger_properties_typeProperties_url": {
+			"value": "https://triggerinput1.dfs.core.windows.net/"
+		},
+		"lsmeta_properties_typeProperties_url": {
+			"value": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"lsonprem2_properties_typeProperties_url": {
+			"value": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"lsonrpremcsql_properties_typeProperties_server": {
+			"value": "DELL\\SQLEXPRESS"
+		},
+		"lsonrpremcsql_properties_typeProperties_database": {
+			"value": "SAMPLEDB1"
+		},
+		"lsonrpremcsql_properties_typeProperties_userName": {
+			"value": "Visionboard"
+		},
+		"lssql_properties_typeProperties_server": {
+			"value": "DELL\\SQLEXPRESS"
+		},
+		"lssql_properties_typeProperties_database": {
+			"value": "SAMPLEDB1"
+		},
+		"lssql_properties_typeProperties_userName": {
+			"value": "DELL\\intel"
+		},
+		"lssql2csv_properties_typeProperties_url": {
+			"value": "https://newonprem1.dfs.core.windows.net/"
+		},
+		"lssqltolog_properties_typeProperties_server": {
+			"value": "DELL\\SQLEXPRESS"
+		},
+		"lssqltolog_properties_typeProperties_database": {
+			"value": "SAMPLEDB1"
+		},
+		"lssqltolog_properties_typeProperties_userName": {
+			"value": "Visionboard"
+		},
+		"lssqql2par_properties_typeProperties_url": {
+			"value": "https://storeonpremisedata1.dfs.core.windows.net/"
+		},
+		"triggernew_properties_typeProperties_scope": {
+			"value": "/subscriptions/151df721-7d35-4071-b059-52a68245c883/resourceGroups/rg_onpremise/providers/Microsoft.Storage/storageAccounts/triggerinput1"
+		},
+		"ls_DS_CSV_Par_src_properties_typeProperties_url": {
+			"value": "https://adlsbulkupload3.dfs.core.windows.net/"
+		}
+	}
+}
