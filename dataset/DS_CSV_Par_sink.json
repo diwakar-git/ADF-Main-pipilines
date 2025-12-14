@@ -1,0 +1,19 @@
+{
+	"name": "DS_CSV_Par_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_DS_Par_des",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
